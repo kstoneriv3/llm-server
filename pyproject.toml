@@ -25,10 +25,21 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = [
+    "mypy>=1.11.2",
+    "isort>=5.13.2",
+]
+
+[tool.rye.scripts]  # Run as "rye run <command>"
+fmt = "rye fmt"
+lint = "rye lint --fix"
+check-all = { chain = ["isort .", "fmt", "lint", "mypy ." ] }
 
 [tool.hatch.metadata]
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/llm_server"]
+
+[tool.mypy]
+ignore_missing_imports = true

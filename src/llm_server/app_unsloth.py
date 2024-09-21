@@ -1,7 +1,6 @@
 # Triton needs compute capability >= 7.0
 
 from flask import Flask, request
-import torch
 from unsloth import FastLanguageModel
 
 
@@ -41,7 +40,7 @@ model, tokenizer = FastLanguageModel.from_pretrained(
     max_seq_length=1024,
     load_in_4bit=True,
 )
-FastLanguageModel.for_inference(model) # Enable native 2x faster inference
+FastLanguageModel.for_inference(model)  # Enable native 2x faster inference
 
 local_llm = LocalLLM(model, tokenizer)
 

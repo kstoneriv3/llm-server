@@ -1,7 +1,8 @@
-from flask import Flask, request
 from functools import cache
+
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from flask import Flask, request
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 # Create a custom LLM class

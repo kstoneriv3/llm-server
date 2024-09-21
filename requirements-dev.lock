@@ -69,6 +69,7 @@ huggingface-hub==0.25.0
 idna==3.10
     # via requests
     # via yarl
+isort==5.13.2
 itsdangerous==2.2.0
     # via flask
 jinja2==3.1.4
@@ -88,6 +89,9 @@ multidict==6.1.0
     # via yarl
 multiprocess==0.70.16
     # via datasets
+mypy==1.11.2
+mypy-extensions==1.0.0
+    # via mypy
 networkx==3.3
     # via torch
 numpy==2.1.1
@@ -211,6 +215,7 @@ trl==0.11.0
     # via unsloth
 typing-extensions==4.12.2
     # via huggingface-hub
+    # via mypy
     # via torch
     # via tyro
 tyro==0.8.11
